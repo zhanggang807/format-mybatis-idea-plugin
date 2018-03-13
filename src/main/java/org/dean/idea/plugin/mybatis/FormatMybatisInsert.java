@@ -76,8 +76,8 @@ public class FormatMybatisInsert extends AnAction {
 
         VirtualFile vFile = anActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE);
         String fileName = vFile != null ? vFile.getName() : null;
-        System.out.println(fileName);
-        System.out.println(StringUtils.isNotEmpty(fileName) && fileName.endsWith(".xml"));
+        //System.out.println(fileName);
+        //System.out.println(StringUtils.isNotEmpty(fileName) && fileName.endsWith(".xml"));
 
         System.out.println();
 
@@ -100,7 +100,7 @@ public class FormatMybatisInsert extends AnAction {
                 "        values  (#id#,#orderId#)";
         FormatMybatisInsert demo = new FormatMybatisInsert();
         String afterFormat = demo.afterFormat(selectedText);
-        System.out.println("afterFormat = " + afterFormat);
+        //System.out.println("afterFormat = " + afterFormat);
     }
 
 
@@ -175,8 +175,11 @@ public class FormatMybatisInsert extends AnAction {
 
             sqlSBuffer.append(")");
 
-            return sqlSBuffer.toString();
+            String sql = sqlSBuffer.toString();
+            sql = sql.replaceAll("\t", "  ");
+            return sql;
         }
+
         return null;
     }
 
