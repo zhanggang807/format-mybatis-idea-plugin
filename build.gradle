@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'org.dean.idea.plugin'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 apply plugin: 'java'
 
@@ -22,6 +22,6 @@ intellij {
 }
 patchPluginXml {
     changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      change tab to whitespace.<br>
+      <em>change tab to whitespace.</em>"""
 }

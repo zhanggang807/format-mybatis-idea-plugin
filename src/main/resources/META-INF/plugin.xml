@@ -2,7 +2,7 @@
     <id>org.dean.idea.plugin.mybatis.format</id>
     <name>Format Insert SQL</name>
     <version>1.0</version>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <vendor email="deanzhg@gmail.com" url="http://www.deanzhg.org">DeanZhg</vendor>
 
     <description><![CDATA[
       format insert sql in an *.xml file, when you select it.
