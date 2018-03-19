@@ -41,8 +41,16 @@ public class FormatMybatisInsert extends AnAction {
         if (StringUtils.isNotEmpty(selectedText)) {
             String trim = selectedText.trim();
             if (trim.split(" ")[0].toUpperCase().equals("INSERT")){
+                if(trim.indexOf("into") <= 0 ||
+                trim.indexOf("INTO") <= 0 ||
+                trim.indexOf("values") <= 0 ||
+                trim.indexOf("VALUES") <= 0) {
+                    Messages.showMessageDialog(project, "SQL语句不合法，缺少 into 或 values 关键字", "Information", Messages.getInformationIcon());
+                    return ;
+                }
                 afterFormat = afterFormat(trim);
             } else {
+                Messages.showMessageDialog(project, "SQL语句不合法，缺少 insert 关键字", "Information", Messages.getInformationIcon());
                 return ;
             }
         } else {
